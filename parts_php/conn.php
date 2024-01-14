@@ -1,12 +1,16 @@
 <?php
 
-// Local
-$hostDB = "localhost";
-$baseName = "test";
-$userDB = "root";
-$passDB = "";
+// Create conn_params.php in the same folder and paste your connection parametrs there:
+// $hostDB = "";
+// $baseName = "";
+// $userDB = "";
+// $passDB = "";
 
-// Server
+include 'conn_params.php';
+$hostDB = $hostDB ?? "localhost";
+$baseName = $baseName ?? "test";
+$userDB = $userDB ?? "root";
+$passDB = $passDB ?? "";
 
 try {
     $dsn = 'mysql:host=' . $hostDB . ';dbname=' . $baseName;
